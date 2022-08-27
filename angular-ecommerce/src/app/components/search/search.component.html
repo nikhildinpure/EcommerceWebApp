@@ -1,0 +1,12 @@
+<form  class="d-flex mx-auto" style="width: 150%;">
+    <input #mySearch  
+    class="form-control me-2" 
+    type="text" 
+    placeholder="Search for Products" 
+    aria-label="Search"
+    (keyup.enter)="doSearch(mySearch.value)">
+
+    <button class="btn btn-outline-primary" 
+    (click)="doSearch(mySearch.value)"
+    >Search</button>
+</form>

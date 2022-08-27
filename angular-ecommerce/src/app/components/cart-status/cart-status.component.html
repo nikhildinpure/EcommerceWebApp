@@ -1,0 +1,14 @@
+<ul class="navbar-nav  cart-nav-pos" >
+    <li class="nav-item">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a routerLink="/cart-details" type="button" class="btn btn-outline-light disabled"  tabindex="-1" >{{totalCartPrice | currency:'INR'}} </a>
+            <a routerLink="/cart-details" type="button" class="btn btn-primary position-relative">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                <span class="position-absolute cart-count-pos translate-middle badge rounded-pill bg-light text-dark">
+                  {{totalCartQuantity}}
+                </span>
+              </a>
+          </div>
+    </li>
+
+</ul>

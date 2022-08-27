@@ -1,0 +1,14 @@
+<form class="d-flex login-logout-pos">
+
+    <button  *ngIf="!isAuthenticated" class="btn btn-primary" type="button" routerLink="/login">Login</button>
+
+    <!-- <button  *ngIf="isAuthenticated"  type="button" class="btn btn-primary" routerLink="/members">Profile</button>&nbsp;
+     -->
+    <div *ngIf="isAuthenticated"  class="btn-group" role="group" aria-label="Basic example">
+        <button  *ngIf="userFullName" type="button" class="btn btn-light " routerLink="/members" >
+            <i class="fa fa-user" aria-hidden="true"></i>&nbsp;{{userFullName}}
+        </button>
+        <button type="button" class="btn btn-warning" (click)="logout()">Logout</button>
+    </div>
+
+</form>

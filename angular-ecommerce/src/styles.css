@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+.active-link{
+    font-weight: bold;
+}
+
+
+.sidebar {
+    position: fixed;
+    width:15%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 60px 0 0;
+    box-shadow: inset -1px 0 0 rgb(0 0 0 / 10%);
+}
+
+.cart-nav-pos{
+    position: absolute !important;
+    right: 18rem !important;
+    bottom: 8px !important;
+}
+
+.cart-count-pos{
+    right: 35%!important;
+    top: 25%!important;
+}
+
+.login-logout-pos{
+    position: absolute !important;
+    right: 3rem !important;
+    bottom: 8px !important;
+}
+
+form .alert.alert-danger{
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0.5rem;
+}

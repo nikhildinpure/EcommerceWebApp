@@ -1,0 +1,62 @@
+
+<div class="container-fluid">
+  <h4>{{currentCategoryName}}</h4>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let product of products;index as i" >
+      <div class="card h-100">
+        <a routerLink="/products/{{product.id}}/{{currentCategoryId}}/{{currentCategoryName}}">
+          <img src="{{product.imageUrl}}" class="card-img-top img-fluid" alt="...">
+        </a>
+        <div class="card-body">
+          <h6 class="card-title">
+            <a routerLink="/products/{{product.id}}/{{currentCategoryId}}/{{currentCategoryName}}" >{{product.name}}</a>
+          </h6>
+          <p class="card-text">{{product.unitPrice | currency: 'INR'}}</p>
+        </div>
+        <div class="card-footer ">
+          <a  class="btn btn-primary " (click)="addToCart(product)" >
+            <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="products?.length == 0" class="alert alert-warning col" role="alert">
+      No Products Found.
+    </div>
+  </div>
+  <br><hr>
+  <div class="row">
+    <div class="col-md-6"></div>
+
+    <div class="col-md-3">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item" *ngIf="thePageNumber != 1" (click)="thePageNumber=1;listProducts()">
+            <a class="page-link" > &nbsp;<<&nbsp; </a>
+          </li>
+          <li class="page-item" *ngIf="thePageNumber != 1" (click)="thePageNumber=thePageNumber-1;listProducts()">
+            <a class="page-link" >{{thePageNumber-1}}</a>
+          </li>
+          <li class="page-item active" (click)="listProducts()">
+            <a class="page-link " >{{thePageNumber}}</a>
+          </li>
+          <li class="page-item" *ngIf="totalPages != thePageNumber" (click)="thePageNumber=thePageNumber+1;listProducts()">
+            <a class="page-link" >{{thePageNumber+1}}</a>
+          </li>
+          <li class="page-item" *ngIf="totalPages != thePageNumber" (click)="thePageNumber=totalPages;listProducts()">
+            <a class="page-link" >&nbsp;>>&nbsp;</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-md-2">
+      <select [(ngModel)]="thePageSize" class="form-select" aria-label="page size">
+        <option [value]="5">5</option>
+        <option [value]="10">10</option>
+        <option [value]="20">20</option>
+        <option [value]="30">50</option>
+      </select>
+    </div>
+    
+  </div>
+</div>

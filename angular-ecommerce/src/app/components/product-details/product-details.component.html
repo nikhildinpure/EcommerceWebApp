@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card mb-3">
+            <div class="row">
+            <div class="col-md-4">
+                <img src="{{currentProduct.imageUrl}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+               
+                <div class="card-body">
+                    <div class="alert alert-primary" role="alert">
+                        <h5 class="card-title">{{currentProduct.name}}</h5>
+                    </div>
+               
+                <p class="card-text">{{currentProduct.description}}</p>
+            
+                <button type="button" class="btn btn-lg btn-primary" disabled>{{currentProduct.unitPrice | currency: 'INR'}}</button>
+                <p class="card-text"><small class="text-muted">Only {{currentProduct.unitsInStock}} left in stock</small></p>
+                
+            </div>
+
+                
+            </div>
+            <div class="card-footer" style="text-align: center;">
+                <a class="btn btn-primary" (click)="addToCart(currentProduct)"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Card</a>
+            </div>
+            </div>
+        </div>
+  </div>
+  <br>
+<div class="alert alert-info" role="alert">
+    <a href="/category/{{previousCategoryId}}/{{previousCatName}}" class="alert-link">Go Back to Products</a>
+</div>
+</div>
